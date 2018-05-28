@@ -1,2 +1,2 @@
 FROM jenkins/jenkins:lts
-JENKINS_OPTS="--prefix=/jenkins -Djenkins.install.runSetupWizard=false"
+ENV JENKINS_OPTS="--prefix=/jenkins -Djenkins.install.runSetupWizard=false"
