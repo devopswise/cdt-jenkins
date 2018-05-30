@@ -1,6 +1,9 @@
-import static jenkins.model.Jenkins.instance as jenkins
-import jenkins.install.InstallState
+#!groovy
 
-if (!jenkins.installState.isSetupComplete()) {
-  InstallState.INITIAL_SETUP_COMPLETED.initializeState()
-}
+import jenkins.model.*
+import hudson.util.*;
+import jenkins.install.*;
+
+def instance = Jenkins.getInstance()
+
+instance.setInstallState(InstallState.INITIAL_SETUP_COMPLETED)
