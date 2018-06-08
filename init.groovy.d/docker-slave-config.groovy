@@ -16,7 +16,7 @@ import io.jenkins.docker.connector.DockerComputerAttachConnector
 import org.jenkinsci.plugins.docker.commons.credentials.DockerServerEndpoint
 
 
-
+def env = System.getenv()
 //def pullCredentialsId = env['LDAP_SERVER']
 //def dnsString = env['LDAP_ROOTDN']
 
