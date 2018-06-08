@@ -92,3 +92,4 @@ dkCloud.add(
 );
 
 Jenkins.getInstance().clouds.replaceBy(dkCloud)
+println "Docker Cloud Config completed"
