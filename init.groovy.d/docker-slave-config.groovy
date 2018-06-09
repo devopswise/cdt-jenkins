@@ -17,31 +17,12 @@ import org.jenkinsci.plugins.docker.commons.credentials.DockerServerEndpoint
 
 
 def env = System.getenv()
-//def pullCredentialsId = env['LDAP_SERVER']
-//def dnsString = env['LDAP_ROOTDN']
 
 def network = env['DOCKER_SLAVE_NETWORK']
-//def network = 'internal'
-
-//def dockerCommand = env['LDAP_ROOTDN']
-
-//def volumesString = '/var/run/docker.sock:/var/run/docker.sock'
 def volumesString = env['DOCKER_SLAVE_VOLUMES']
-
-//def volumesFromString = env['LDAP_ROOTDN']
-//def environmentsString = 'JENKINS_SLAVE_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCq2fTf6psRS53paW1hSWGANcmSG9miwci08L9AChjIDZG5OV8RBWjXKimfFzbP18fnmuzJ6cmghvx1e4IkpBdAdgz9qyqPC10J/c3gYtdqdZkTHI712DyME7FoIYqEP3dy7H407mJOnj4nJB3E6KhMsPXHGWu1IYp2fIOqJPY3p/4n3KGqYZnWamGuFoefqE3zd/blB7MMNRrT7vcnrHnCl1XNC6P9T29orTrHJL7Vg1wNklyM24w0vXxVm7whBfiZc/C4rotjTHwbuQeL5jqP4OEp1N8mHbrAcnuEzVRQzK9chvwDR81c4PQkGAWx6jC54XOV6UnQYyrlPnToofKx root@ip-172-31-36-108'
 def environmentsString = env['DOCKER_SLAVE_ENVIRONMENT']
-//def hostname = env['LDAP_ROOTDN']
-//def memoryLimit = env['LDAP_ROOTDN']
-//def memorySwap = env['LDAP_ROOTDN']
-
-//def image = 'jenkinsci/ssh-slave'
 def image = env['DOCKER_SLAVE_IMAGE']
-
-//def dockerSlaveLabel = 'jenkins-ssh-slave'
 def dockerSlaveLabel = env['DOCKER_SLAVE_LABEL']
-
-//def dockerHostUri = 'tcp://172.17.0.1:2375'
 def dockerHostUri = env['DOCKER_SLAVE_DOCKER_HOST_URI']
 
 
