@@ -25,6 +25,7 @@ def environmentsString = env['DOCKER_SLAVE_ENVIRONMENT']
 def image = env['DOCKER_SLAVE_IMAGE']
 def dockerSlaveLabel = env['DOCKER_SLAVE_LABEL']
 def dockerHostUri = env['DOCKER_SLAVE_DOCKER_HOST_URI']
+def jenkinsBaseUrl = env['JENKINS_BASE_URL']
 
 // https://github.com/jenkinsci/docker-plugin/blob/docker-plugin-1.1.2/src/main/java/com/nirima/jenkins/plugins/docker/DockerTemplateBase.java#L122
 DockerTemplateBase templateBase = new DockerTemplateBase(
@@ -48,10 +49,10 @@ DockerTemplateBase templateBase = new DockerTemplateBase(
                               "" // extraHostsString
 );
 
-jlc = JenkinsLocationConfiguration.get()
+//jlc = JenkinsLocationConfiguration.get()
 
 DockerComputerJNLPConnector connector = new DockerComputerJNLPConnector(new JNLPLauncher(null, null)).withUser("jenkins")
-                    .withJenkinsUrl(jlc.jenkinsUrl);
+                    .withJenkinsUrl(jenkinsBaseUrl);
 
 DockerTemplate dkTemplate = new DockerTemplate(templateBase,connector,dockerSlaveLabel,"","");
 
