@@ -51,8 +51,7 @@ DockerTemplateBase templateBase = new DockerTemplateBase(
 
 //jlc = JenkinsLocationConfiguration.get()
 
-DockerComputerJNLPConnector connector = new DockerComputerJNLPConnector(new JNLPLauncher(null, null)).withUser("jenkins")
-                    .withJenkinsUrl(jenkinsBaseUrl);
+DockerComputerJNLPConnector connector = new DockerComputerJNLPConnector(new JNLPLauncher(null, null)).withUser("jenkins").withJenkinsUrl(jenkinsBaseUrl);
 
 DockerTemplate dkTemplate = new DockerTemplate(templateBase,connector,dockerSlaveLabel,"","");
 
